@@ -9,7 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organizator.BLL", "Organiza
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organizator.DAL", "Organizator.DAL\Organizator.DAL.csproj", "{B28789CE-DDD8-4056-BACA-4BBECCD634EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organizator.Entity", "Organizator.Entity\Organizator.Entity.csproj", "{39DEECFE-4B34-49AB-8D2F-8F8BE0642600}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{445F000B-A285-4E66-93F9-E2B699042FCD}"
+	ProjectSection(SolutionItems) = preProject
+		SqlQuery_1.sql = SqlQuery_1.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +32,6 @@ Global
 		{B28789CE-DDD8-4056-BACA-4BBECCD634EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B28789CE-DDD8-4056-BACA-4BBECCD634EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B28789CE-DDD8-4056-BACA-4BBECCD634EB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{39DEECFE-4B34-49AB-8D2F-8F8BE0642600}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{39DEECFE-4B34-49AB-8D2F-8F8BE0642600}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{39DEECFE-4B34-49AB-8D2F-8F8BE0642600}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{39DEECFE-4B34-49AB-8D2F-8F8BE0642600}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

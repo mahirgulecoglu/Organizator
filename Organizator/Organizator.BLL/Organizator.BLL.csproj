@@ -43,5 +43,11 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Organizator.DAL\Organizator.DAL.csproj">
+      <Project>{b28789ce-ddd8-4056-baca-4bbeccd634eb}</Project>
+      <Name>Organizator.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
