@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organizator.UI", "Organizator.UI\Organizator.UI.csproj", "{2FBB7223-F0F6-4576-907E-FAA497D18F05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organizator.BLL", "Organizator.BLL\Organizator.BLL.csproj", "{04870E20-1D3A-4C92-BC5B-526D21C95476}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organizator.Entity", "Organizator.Entity\Organizator.Entity.csproj", "{3797FBBA-C681-41F1-B394-22FFD3620E9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organizator.DAL", "Organizator.DAL\Organizator.DAL.csproj", "{44B4C263-F049-4D5B-A9D5-B612125B1311}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Items", "Items", "{BEDFBC3F-780D-487F-B032-FAF2AB987061}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\Downloads\eventalk\eventalk\about.html = ..\..\..\..\Downloads\eventalk\eventalk\about.html
+		..\..\..\..\Downloads\eventalk\eventalk\blog-single.html = ..\..\..\..\Downloads\eventalk\eventalk\blog-single.html
+		..\..\..\..\Downloads\eventalk\eventalk\blog.html = ..\..\..\..\Downloads\eventalk\eventalk\blog.html
+		..\..\..\..\Downloads\eventalk\eventalk\contact.html = ..\..\..\..\Downloads\eventalk\eventalk\contact.html
+		Data.sql = Data.sql
+		..\..\..\..\Downloads\eventalk\eventalk\index.html = ..\..\..\..\Downloads\eventalk\eventalk\index.html
+		..\..\..\..\Downloads\eventalk\eventalk\schedule.html = ..\..\..\..\Downloads\eventalk\eventalk\schedule.html
+		..\..\..\..\Downloads\eventalk\eventalk\speakers.html = ..\..\..\..\Downloads\eventalk\eventalk\speakers.html
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2FBB7223-F0F6-4576-907E-FAA497D18F05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FBB7223-F0F6-4576-907E-FAA497D18F05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FBB7223-F0F6-4576-907E-FAA497D18F05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FBB7223-F0F6-4576-907E-FAA497D18F05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04870E20-1D3A-4C92-BC5B-526D21C95476}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04870E20-1D3A-4C92-BC5B-526D21C95476}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04870E20-1D3A-4C92-BC5B-526D21C95476}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04870E20-1D3A-4C92-BC5B-526D21C95476}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3797FBBA-C681-41F1-B394-22FFD3620E9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3797FBBA-C681-41F1-B394-22FFD3620E9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3797FBBA-C681-41F1-B394-22FFD3620E9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3797FBBA-C681-41F1-B394-22FFD3620E9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44B4C263-F049-4D5B-A9D5-B612125B1311}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44B4C263-F049-4D5B-A9D5-B612125B1311}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44B4C263-F049-4D5B-A9D5-B612125B1311}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44B4C263-F049-4D5B-A9D5-B612125B1311}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {79BB6C60-C627-4EA6-9560-D42E9BAD878F}
+	EndGlobalSection
+EndGlobal
