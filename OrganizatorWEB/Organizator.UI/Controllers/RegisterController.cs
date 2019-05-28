@@ -20,7 +20,7 @@ namespace Organizator.UI.Controllers
         public ActionResult Register(Person person)
         {
             personBLL.Register(person);
-            return View();
+            return RedirectToAction("Login", "Register");
         }
         public ActionResult Login()
         {
@@ -43,6 +43,12 @@ namespace Organizator.UI.Controllers
         public ActionResult LoginHata()
         {
             return View();
+        }
+
+        public ActionResult LogOut()
+        {
+            Session.Remove("Login");
+            return RedirectToAction("Index","Home");
         }
     }
 }
