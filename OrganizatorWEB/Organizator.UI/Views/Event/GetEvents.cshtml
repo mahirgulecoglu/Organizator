@@ -1,0 +1,64 @@
+﻿@model List<Organizator.Entity.Event>
+
+@{
+    ViewBag.Title = "GetEvents";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="container">
+    <div class="row d-flex">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 d-flex ftco-animate">
+                <div class="blog-entry justify-content-end" style="width:280px">
+                    <a href="blog-single.html" class="block-20" style="background-image: url('@item.EventImage');">
+                    </a>
+                    <div class="text p-4 float-right d-block">
+                        <div class="d-flex align-items-center pt-2 mb-4">
+                            <div class="one">
+                                <span class="day">@item.ApplicationDate.Day</span>
+                            </div>
+                            <div class="two">
+                                <span class="yr">@item.ApplicationDate.Year</span>
+                                @switch (item.ApplicationDate.Month)
+                                {
+                                    case 1:<span class="mos">January</span>;
+                                        break;
+                                    case 2:<span class="mos">February</span>;
+                                        break;
+                                    case 3:<span class="mos">March</span>;
+                                        break;
+                                    case 4:<span class="mos">April</span>;
+                                        break;
+                                    case 5:<span class="mos">May</span>;
+                                        break;
+                                    case 6:<span class="mos">June</span>;
+                                        break;
+                                    case 7:<span class="mos">July</span>;
+                                        break;
+                                    case 8:<span class="mos">August</span>;
+                                        break;
+                                    case 9:<span class="mos">September</span>;
+                                        break;
+                                    case 10:<span class="mos">October</span>;
+                                        break;
+                                    case 11:<span class="mos">Novamber</span>;
+                                        break;
+                                    case 12:<span class="mos">December</span>;
+                                        break;
+                                }
+                            </div>
+                        </div>
+                        <h3 class="heading mt-2"><a href="#">@item.EventName</a></h3>
+                        <p>@item.Address, @item.City</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

@@ -20,33 +20,35 @@
     <link rel="stylesheet" href="~/Content/css/style.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-        <div class="container">
-            <a class="navbar-brand" href="~/Views/Home/Index.cshtml">SetYour<span>EVENT.</span></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="oi oi-menu"></span> Menu
-            </button>
-            <div class="collapse navbar-collapse" id="ftco-nav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="~/Views/Home/Index.cshtml" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="speakers.html" class="nav-link">Events</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                    @if (Session["Login"] == null)
-                    {
-                        <li class="nav-item"><a href="/Register/Register" class="nav-link">Sign UP</a></li>
-                        <li class="nav-item"><a href="/Register/Login" class="nav-link">Sign IN</a></li>
-                    }
-                    else
-                    {
-                        <li class="nav-item"><a href="/Register/Logout" class="nav-link">Log OUT</a></li>
-                        <li class="nav-item cta mr-md-2"><a href="/Event/AddEvent" class="nav-link">Set EVENT</a></li>
-                    }
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+            <div class="container">
+                <a class="navbar-brand" href="/Home/Index">SetYour<span>EVENT.</span></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="oi oi-menu"></span> Menu
+                </button>
+                <div class="collapse navbar-collapse" id="ftco-nav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active"><a href="/Home/Index" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="/Event/GetEvents" class="nav-link">Events</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                        @if (Session["Login"] == null)
+                        {
+                            <li class="nav-item"><a href="/Register/Register" class="nav-link">Sign UP</a></li>
+                            <li class="nav-item"><a href="/Register/Login" class="nav-link">Sign IN</a></li>
+                        }
+                        else
+                        {
+                            <li class="nav-item"><a href="/Register/Logout" class="nav-link">Log OUT</a></li>
+                            <li class="nav-item cta mr-md-2"><a href="/Event/AddEvent" class="nav-link">Set EVENT</a></li>
+                        }
 
-                </ul>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
     <div>
         @RenderBody()
     </div>

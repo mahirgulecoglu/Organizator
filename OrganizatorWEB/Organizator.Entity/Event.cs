@@ -14,6 +14,12 @@ namespace Organizator.Entity
         [Required]
         [StringLength(50)]
         public string EventName { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string Address { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string City { get; set; }
 
         public DateTime CreatedDate { get; set; }
 

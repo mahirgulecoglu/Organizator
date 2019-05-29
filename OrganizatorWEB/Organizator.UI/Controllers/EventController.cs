@@ -22,5 +22,10 @@ namespace Organizator.UI.Controllers
             eventBLL.AddEvent(events);
             return RedirectToAction("Detail", "Event");
         }
+        public ActionResult GetEvents()
+        {
+            var model=eventBLL.GetEvents();
+            return View(model);
+        }
     }
 }

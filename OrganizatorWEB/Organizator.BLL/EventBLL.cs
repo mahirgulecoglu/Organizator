@@ -16,5 +16,9 @@ namespace Organizator.BLL
             db.Event.Add(events);
             db.SaveChanges();
         }
+        public List<Event> GetEvents()
+        {
+            return db.Event.ToList();
+        }
     }
 }
