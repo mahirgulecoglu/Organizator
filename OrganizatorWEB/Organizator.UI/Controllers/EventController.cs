@@ -20,11 +20,16 @@ namespace Organizator.UI.Controllers
         public ActionResult AddEvent(Event events)
         {
             eventBLL.AddEvent(events);
-            return RedirectToAction("Detail", "Event");
+            return RedirectToAction("GetEvents", "Event");
         }
         public ActionResult GetEvents()
         {
             var model=eventBLL.GetEvents();
+            return View(model);
+        }
+        public ActionResult EventDetail(int id)
+        {
+            var model = eventBLL.EventDetail(id);
             return View(model);
         }
     }

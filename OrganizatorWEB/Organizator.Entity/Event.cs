@@ -9,20 +9,22 @@ namespace Organizator.Entity
     [Table("Event")]
     public partial class Event
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Event()
+        {
+            EventPeople = new HashSet<EventPeople>();
+        }
+
         public int EventID { get; set; }
 
         [Required]
         [StringLength(50)]
         public string EventName { get; set; }
-        [Required]
-        [StringLength(50)]
-        public string Address { get; set; }
-        [Required]
-        [StringLength(50)]
-        public string City { get; set; }
 
+        [Column(TypeName = "date")]
         public DateTime CreatedDate { get; set; }
 
+        [Column(TypeName = "date")]
         public DateTime ApplicationDate { get; set; }
 
         public int Subscribers { get; set; }
@@ -35,8 +37,23 @@ namespace Organizator.Entity
 
         public int PersonID { get; set; }
 
+        [Required]
+        [StringLength(50)]
+        public string Address { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string City { get; set; }
+
+        [Required]
+        [StringLength(250)]
+        public string Description { get; set; }
+
         public virtual Categories Categories { get; set; }
 
         public virtual Person Person { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<EventPeople> EventPeople { get; set; }
     }
 }

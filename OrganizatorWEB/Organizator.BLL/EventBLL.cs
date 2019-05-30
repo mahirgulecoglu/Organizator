@@ -20,5 +20,10 @@ namespace Organizator.BLL
         {
             return db.Event.ToList();
         }
+
+        public Event EventDetail(int id)
+        {
+            return db.Event.FirstOrDefault(x => x.EventID == id);
+        }
     }
 }

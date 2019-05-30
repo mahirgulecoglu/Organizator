@@ -1,0 +1,59 @@
+﻿@model Organizator.Entity.Event
+
+@{
+    ViewBag.Title = "EventDetail";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<br />
+<br />
+<br />
+<br />
+<br />
+<section class="ftco-counter img" id="section-counter">
+    <div class="container">
+        <div class="row d-flex">
+            <div class="col-md-6 d-flex">
+                <div class="img d-flex align-self-stretch" style="background-image:url(@Model.EventImage);"></div>
+            </div>
+            <div class="col-md-6 pl-md-5 py-5">
+                <div class="row justify-content-start pb-3">
+                    <div class="col-md-12 heading-section ftco-animate">
+                        <h2 class="mb-4">@Model.EventName</h2>
+                        <span class="subheading">Event Date @Model.ApplicationDate</span>
+                        <span class="subheading">Event Sahibi @Model.Person.FirstName @Model.Person.LastName</span>
+                        <h5>@Model.Description</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 justify-content-center counter-wrap ftco-animate">
+                        <div class="block-18 text-center py-4 bg-light mb-4">
+                            <div class="text">
+                                <div class="icon d-flex justify-content-center align-items-center">
+                                    <span class="flaticon-placeholder"></span>
+                                </div>
+                                <strong class="number">@Model.City</strong>
+                                <span>@Model.Address</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 justify-content-center counter-wrap ftco-animate">
+                        <div class="block-18 text-center py-4 bg-light mb-4">
+                            <div class="text">
+                                <div class="icon d-flex justify-content-center align-items-center">
+                                    <span class="flaticon-chair"></span>
+                                </div>
+                                <strong class="number">@Model.Subscribers</strong>
+                                <span>Total Seats</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 justify-content-center counter-wrap ftco-animate">
+                        <br /><br />
+                        <button type="submit" class="btn btn-primary btn-lg">JOIN</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br/><br /><br /><br /><br />

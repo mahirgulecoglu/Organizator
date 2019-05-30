@@ -41,7 +41,7 @@
                         else
                         {
                             <li class="nav-item"><a href="/Register/Logout" class="nav-link">Log OUT</a></li>
-                            <li class="nav-item cta mr-md-2"><a href="/Event/AddEvent" class="nav-link">Set EVENT</a></li>
+                            <li class="nav-item"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Set EVENT</button></li>
                         }
 
                     </ul>
@@ -50,6 +50,7 @@
         </nav>
     </header>
     <div>
+        @Html.Partial("~/Views/Event/AddEvent.cshtml")
         @RenderBody()
     </div>
     <footer class="ftco-footer ftco-bg-dark ftco-section">

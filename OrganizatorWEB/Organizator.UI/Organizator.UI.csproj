@@ -171,7 +171,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Models\EventModel.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -193,6 +192,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\EventModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -316,8 +316,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Event\AddEvent.cshtml" />
     <Content Include="Views\Event\GetEvents.cshtml" />
+    <Content Include="Views\Event\EventDetail.cshtml" />
+    <Content Include="Views\Event\AddEvent.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -338,7 +339,7 @@
       <Name>Organizator.DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Organizator.Entity\Organizator.Entity.csproj">
-      <Project>{3797fbba-c681-41f1-b394-22ffd3620e9d}</Project>
+      <Project>{9409678d-e5c8-4607-958a-6b5d96a11764}</Project>
       <Name>Organizator.Entity</Name>
     </ProjectReference>
   </ItemGroup>

@@ -50,14 +50,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Organizator.Entity\Organizator.Entity.csproj">
-      <Project>{3797fbba-c681-41f1-b394-22ffd3620e9d}</Project>
-      <Name>Organizator.Entity</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Organizator.Entity\Organizator.Entity.csproj">
+      <Project>{9409678d-e5c8-4607-958a-6b5d96a11764}</Project>
+      <Name>Organizator.Entity</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

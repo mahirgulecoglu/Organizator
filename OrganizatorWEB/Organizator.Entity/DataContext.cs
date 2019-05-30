@@ -14,8 +14,10 @@ namespace Organizator.Entity
 
         public virtual DbSet<Categories> Categories { get; set; }
         public virtual DbSet<Event> Event { get; set; }
+        public virtual DbSet<EventPeople> EventPeople { get; set; }
         public virtual DbSet<Message> Message { get; set; }
         public virtual DbSet<Person> Person { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -24,8 +26,18 @@ namespace Organizator.Entity
                 .WithRequired(e => e.Categories)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<Event>()
+                .HasMany(e => e.EventPeople)
+                .WithRequired(e => e.Event)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<Person>()
                 .HasMany(e => e.Event)
+                .WithRequired(e => e.Person)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Person>()
+                .HasMany(e => e.EventPeople)
                 .WithRequired(e => e.Person)
                 .WillCascadeOnDelete(false);
 

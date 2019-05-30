@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organizator.UI", "Organizat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organizator.BLL", "Organizator.BLL\Organizator.BLL.csproj", "{04870E20-1D3A-4C92-BC5B-526D21C95476}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organizator.Entity", "Organizator.Entity\Organizator.Entity.csproj", "{3797FBBA-C681-41F1-B394-22FFD3620E9D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organizator.DAL", "Organizator.DAL\Organizator.DAL.csproj", "{44B4C263-F049-4D5B-A9D5-B612125B1311}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Items", "Items", "{BEDFBC3F-780D-487F-B032-FAF2AB987061}"
@@ -22,6 +20,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Items", "Items", "{BEDFBC3F
 		..\..\..\..\Downloads\eventalk\eventalk\schedule.html = ..\..\..\..\Downloads\eventalk\eventalk\schedule.html
 		..\..\..\..\Downloads\eventalk\eventalk\speakers.html = ..\..\..\..\Downloads\eventalk\eventalk\speakers.html
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organizator.Entity", "Organizator.Entity\Organizator.Entity.csproj", "{9409678D-E5C8-4607-958A-6B5D96A11764}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,14 +37,14 @@ Global
 		{04870E20-1D3A-4C92-BC5B-526D21C95476}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04870E20-1D3A-4C92-BC5B-526D21C95476}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04870E20-1D3A-4C92-BC5B-526D21C95476}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3797FBBA-C681-41F1-B394-22FFD3620E9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3797FBBA-C681-41F1-B394-22FFD3620E9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3797FBBA-C681-41F1-B394-22FFD3620E9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3797FBBA-C681-41F1-B394-22FFD3620E9D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{44B4C263-F049-4D5B-A9D5-B612125B1311}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{44B4C263-F049-4D5B-A9D5-B612125B1311}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44B4C263-F049-4D5B-A9D5-B612125B1311}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44B4C263-F049-4D5B-A9D5-B612125B1311}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9409678D-E5C8-4607-958A-6B5D96A11764}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9409678D-E5C8-4607-958A-6B5D96A11764}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9409678D-E5C8-4607-958A-6B5D96A11764}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9409678D-E5C8-4607-958A-6B5D96A11764}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

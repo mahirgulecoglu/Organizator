@@ -13,6 +13,7 @@ namespace Organizator.Entity
         public Person()
         {
             Event = new HashSet<Event>();
+            EventPeople = new HashSet<EventPeople>();
             Message = new HashSet<Message>();
             Message1 = new HashSet<Message>();
         }
@@ -27,10 +28,6 @@ namespace Organizator.Entity
         [StringLength(50)]
         public string LastName { get; set; }
 
-        [Required]
-        [StringLength(50)]
-        public string Email { get; set; }
-
         [Column(TypeName = "date")]
         public DateTime DateOfBirth { get; set; }
 
@@ -42,8 +39,15 @@ namespace Organizator.Entity
         [StringLength(50)]
         public string Password { get; set; }
 
+        [Required]
+        [StringLength(50)]
+        public string Email { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Event> Event { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<EventPeople> EventPeople { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Message> Message { get; set; }
