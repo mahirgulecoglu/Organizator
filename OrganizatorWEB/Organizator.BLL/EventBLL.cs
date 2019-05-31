@@ -30,5 +30,24 @@ namespace Organizator.BLL
         {
             return db.Categories.ToList();
         }
+
+        public List<Event> UserGetEvents(int id)
+        {
+            return db.Event.Where(x => x.PersonID == id).ToList();
+        }
+
+        public void DeleteEvent(int id)
+        {
+            Event events = new Event();
+            events = db.Event.Where(x => x.EventID == id).FirstOrDefault();
+            db.Event.Remove(events);
+            db.SaveChanges();
+        }
+
+        public void JoinEvent(EventPeople events)
+        {
+            db.EventPeople.Add(events);
+            db.SaveChanges();
+        }
     }
 }

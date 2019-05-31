@@ -1,0 +1,37 @@
+﻿@model List<Organizator.Entity.Event>
+
+@{
+    ViewBag.Title = "UserGetEvents";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="container">
+    <table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <div class="speaker-wrap ftco-animate d-flex">
+                        <div class="img speaker-img" style="background-image: url(@item.EventImage);"></div>
+                        <div class="text pl-md-5">
+                            <span class="time">@item.ApplicationDate</span>
+                            <h2><a href="/Event/EventDetail/@item.EventID">@item.EventName</a></h2>
+                            <p>@item.Description</p>
+                            <h3 class="speaker-name">&mdash; <a href="#">@item.Person.FirstName @item.Person.LastName</a> <span class="position">@item.Address</span></h3>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <a type="button" class="btn btn-warning" href="">Update</a>
+                    <a type="button" class="btn btn-danger" href="@Url.Action("DeleteEvent","Event" ,new {id=item.EventID })" onclick="return confirm('Sure you Delete')">Delete</a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
+

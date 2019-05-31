@@ -1,5 +1,5 @@
 ﻿@model Organizator.Entity.Event
-
+@using Organizator.Entity
 @{
     ViewBag.Title = "EventDetail";
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
@@ -49,11 +49,15 @@
                     </div>
                     <div class="col-md-6 justify-content-center counter-wrap ftco-animate">
                         <br /><br />
-                        <button type="submit" class="btn btn-primary btn-lg">JOIN</button>
+                        <form>
+                            <input type="number" name="quantity" min="1" max="5" style="height:40px; width:75px">
+                            <button type="submit" class="btn btn-primary btn-lg">JOIN</button>
+                        </form>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<br/><br /><br /><br /><br />
+<br /><br /><br /><br /><br />

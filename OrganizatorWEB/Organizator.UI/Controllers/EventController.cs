@@ -35,5 +35,29 @@ namespace Organizator.UI.Controllers
             var model = eventBLL.EventDetail(id);
             return View(model);
         }
+        
+        public ActionResult UserGetEvents()
+        {
+            var person = (Person)Session["Login"];
+            var model = eventBLL.UserGetEvents(person.PersonID);
+            return View(model);
+        }
+
+        public ActionResult DeleteEvent(int id)
+        {
+            eventBLL.DeleteEvent(id);
+            return RedirectToAction("UserGetEvents", "Event");
+        }
+        public ActionResult JoinEvent()
+        {
+            return View(new EventPeople());
+        }
+        [HttpPost]
+        public ActionResult JoinEvent(EventPeople events)
+        {
+            var person = (Person)Session["Login"];
+            events.PersonID = person.PersonID;
+            return RedirectToAction("GetEvents", "Event");
+        }
     }
 }
