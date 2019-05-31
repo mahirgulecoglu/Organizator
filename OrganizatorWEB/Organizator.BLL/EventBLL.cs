@@ -25,5 +25,10 @@ namespace Organizator.BLL
         {
             return db.Event.FirstOrDefault(x => x.EventID == id);
         }
+
+        public List<Categories> GetCategories()
+        {
+            return db.Categories.ToList();
+        }
     }
 }

@@ -14,17 +14,20 @@ namespace Organizator.UI.Controllers
         // GET: Event
         public ActionResult AddEvent()
         {
-            return View();
+            return View(new Event());
         }
         [HttpPost]
         public ActionResult AddEvent(Event events)
         {
+            var person = (Person)Session["Login"];
+            events.PersonID = person.PersonID;
+            events.CreatedDate = DateTime.Now;
             eventBLL.AddEvent(events);
             return RedirectToAction("GetEvents", "Event");
         }
         public ActionResult GetEvents()
         {
-            var model=eventBLL.GetEvents();
+            var model = eventBLL.GetEvents();
             return View(model);
         }
         public ActionResult EventDetail(int id)

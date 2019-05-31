@@ -1,4 +1,10 @@
-﻿<div class="modal" id="myModal">
+﻿@model Organizator.Entity.Event
+@using Organizator.BLL
+@{EventBLL eventBLL = new EventBLL();
+    var cat = eventBLL.GetCategories();
+}
+
+<div class="modal" id="myModal">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -6,12 +12,46 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                Modal body..
+                @using (Html.BeginForm("AddEvent", "Event", FormMethod.Post))
+                {
+                    <div class="form-group">
+                        @Html.Label("EventName", "Event Name")
+                        @Html.TextBoxFor(x => x.EventName, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Description)
+                        @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("CategoryName", "Category")
+                        @Html.DropDownListFor(x => x.CategoryID, new SelectList(cat, "CategoryID", "CategoryName"), new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("ApplicationDate", "Date")
+                        @Html.TextBoxFor(x => x.ApplicationDate, new { @class = "form-control", type = "date" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Subscribers)
+                        @Html.TextBoxFor(x => x.Subscribers, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("EventImage", "Image")
+                        @Html.TextBoxFor(x => x.EventImage, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Address)
+                        @Html.TextBoxFor(x => x.Address, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.City)
+                        @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+                    </div>
+                    <button type="submit" class="btn btn-primary">SET</button>
+                    <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                }
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
-
         </div>
     </div>
 </div>

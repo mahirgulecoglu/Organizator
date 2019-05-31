@@ -1,5 +1,4 @@
 ﻿@model List<Organizator.Entity.Event>
-
 @{
     ViewBag.Title = "GetEvents";
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
@@ -53,7 +52,7 @@
                                 }
                             </div>
                         </div>
-                        Event Sahibi, @item.Person.FirstName @item.Person.LastName
+                        <p style="font-size:small"> Sahibi, @item.Person.FirstName @item.Person.LastName</p>
                         <h3 class="heading mt-2"><a href="/Event/EventDetail/@item.EventID">@item.EventName</a></h3>
                         <p>YER : @item.Address, @item.City</p>
                     </div>
