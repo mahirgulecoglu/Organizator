@@ -325,6 +325,7 @@
     <Content Include="Views\Event\JoinEvent.cshtml" />
     <Content Include="Views\Event\GetJoinedEvent.cshtml" />
     <Content Include="Views\Person\PersonDetail.cshtml" />
+    <Content Include="Views\Person\UpdatePerson.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

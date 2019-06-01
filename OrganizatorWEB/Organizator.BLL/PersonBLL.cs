@@ -25,5 +25,9 @@ namespace Organizator.BLL
         {
             return db.Person.FirstOrDefault(x => x.PersonID == id);
         }
+        public void UpdatePerson(Person person)
+        {
+            db.SaveChanges();
+        }
     }
 }

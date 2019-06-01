@@ -20,12 +20,12 @@
                         @Html.Label("TotalPerson", "Number of Seat")
                         @Html.TextBoxFor(x => x.TotalPerson, new { @class = "form-control", type = "number", min = "1", max = "5", style = "height:40px; width:75px" })
                     </div>
-                    <div class="form-group">
+                    @*<div class="form-group">
                         @if (id != 0)
                         {
                             @Html.HiddenFor(x => x.EventID == id, new { @class = "form-control" }) 
                         }
-                    </div>
+                    </div>*@
                     <button type="submit" class="btn btn-primary">SET</button>
                     <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
                 }

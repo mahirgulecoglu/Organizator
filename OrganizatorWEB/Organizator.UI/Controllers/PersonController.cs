@@ -20,5 +20,25 @@ namespace Organizator.UI.Controllers
             var model = personBLL.PersonDetail(person.PersonID);
             return View(model);
         }
+        [LoginFilter]
+        public ActionResult UpdatePerson(int id)
+        {
+            var p = personBLL.PersonDetail(id);
+            return View(p);
+        }
+        [LoginFilter]
+        [HttpPost]
+        public ActionResult UpdatePerson(Person p)
+        {
+            Person person = personBLL.PersonDetail(p.PersonID);
+            person.FirstName = p.FirstName;
+            person.LastName = p.LastName;
+            person.UserName = p.UserName;
+            person.Password = p.Password;
+            person.DateOfBirth = p.DateOfBirth;
+            person.Email = p.Email;
+            personBLL.UpdatePerson(person);
+            return RedirectToAction("PersonDetail","Person");
+        }
     }
 }
