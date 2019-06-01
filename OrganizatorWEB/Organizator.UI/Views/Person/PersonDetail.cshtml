@@ -1,0 +1,37 @@
+﻿@model Organizator.Entity.Person
+
+@{
+    ViewBag.Title = "PersonDetail";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+
+<br /><br /><br /><br />
+<section class="ftco-section contact-section">
+    <div class="container">
+        <div class="row d-flex mb-5 contact-info" style="font-size:x-large">
+            <div class="col-md-12 mb-4">
+                <h2 class="h1">Person Information</h2>
+            </div>
+            <div class="w-100"></div>
+            <div class="col-md-12">
+                <p><span>Name:</span>@Model.FirstName @Model.LastName</p>
+            </div>
+            <div class="col-md-12">
+                <p><span>User Name:</span> @Model.UserName</p>
+            </div>
+            <div class="col-md-12">
+                <p><span>Email:</span>@Model.Email</p>
+            </div>
+            <div class="col-md-12">
+                <p><span>Password:</span>@Model.Password</p>
+            </div>
+            <div class="col-md-12">
+                <p><span>Birth Date:</span>@Model.DateOfBirth</p>
+            </div>
+            <div class="col-md-12">
+                <a href="/Event/AddEvent" class="btn btn-primary">Update</a>
+            </div>
+        </div>
+    </div>
+</section>

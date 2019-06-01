@@ -188,6 +188,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Filter\LoginFilter.cs" />
     <Compile Include="Global.asax.cs">
@@ -323,6 +324,7 @@
     <Content Include="Views\Event\UserGetEvents.cshtml" />
     <Content Include="Views\Event\JoinEvent.cshtml" />
     <Content Include="Views\Event\GetJoinedEvent.cshtml" />
+    <Content Include="Views\Person\PersonDetail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -17,10 +17,13 @@ namespace Organizator.BLL
             db.Person.Add(person);
             db.SaveChanges();
         }
-
         public Person Login(Person person)
         {
             return db.Person.FirstOrDefault(x => x.UserName == person.UserName && x.Password == person.Password);
+        }
+        public Person PersonDetail(int id)
+        {
+            return db.Person.FirstOrDefault(x => x.PersonID == id);
         }
     }
 }

@@ -1,5 +1,11 @@
 ﻿@model Organizator.Entity.EventPeople
-
+@{
+    int id = 0;
+    if (Convert.ToInt32(ViewContext.RouteData.Values["id"]) != 0)
+    {
+        id = Convert.ToInt32(ViewContext.RouteData.Values["id"]);
+    }
+}
 <div class="modal" id="myModalJoin">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -15,7 +21,10 @@
                         @Html.TextBoxFor(x => x.TotalPerson, new { @class = "form-control", type = "number", min = "1", max = "5", style = "height:40px; width:75px" })
                     </div>
                     <div class="form-group">
-                        @Html.HiddenFor(x => x.EventID, new { @class = "form-control" })
+                        @if (id != 0)
+                        {
+                            @Html.HiddenFor(x => x.EventID == id, new { @class = "form-control" }) 
+                        }
                     </div>
                     <button type="submit" class="btn btn-primary">SET</button>
                     <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
