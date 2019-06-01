@@ -320,6 +320,7 @@
     <Content Include="Views\Event\EventDetail.cshtml" />
     <Content Include="Views\Event\AddEvent.cshtml" />
     <Content Include="Views\Event\UserGetEvents.cshtml" />
+    <Content Include="Views\Event\JoinEvent.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

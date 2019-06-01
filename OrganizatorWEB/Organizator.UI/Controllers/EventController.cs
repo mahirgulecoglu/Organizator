@@ -57,6 +57,7 @@ namespace Organizator.UI.Controllers
         {
             var person = (Person)Session["Login"];
             events.PersonID = person.PersonID;
+            eventBLL.JoinEvent(events);
             return RedirectToAction("GetEvents", "Event");
         }
     }
