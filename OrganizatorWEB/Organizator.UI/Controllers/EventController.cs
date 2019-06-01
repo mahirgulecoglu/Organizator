@@ -60,5 +60,16 @@ namespace Organizator.UI.Controllers
             eventBLL.JoinEvent(events);
             return RedirectToAction("GetEvents", "Event");
         }
+        public ActionResult GetJoinedEvent()
+        {
+            var person = (Person)Session["Login"];
+            var model = eventBLL.GetJoinedEvent(person.PersonID);
+            return View(model);
+        }
+        public ActionResult DeleteJoinedEvent(int id)
+        {
+            eventBLL.DeleteJoinedEvent(id);
+            return RedirectToAction("GetJoinedEvent", "Event");
+        }
     }
 }

@@ -1,0 +1,36 @@
+﻿@model List<Organizator.Entity.EventPeople>
+
+@{
+    ViewBag.Title = "GetJoinedEvent";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="container">
+    <table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <div class="speaker-wrap ftco-animate d-flex">
+                        <div class="img speaker-img" style="background-image: url(@item.Event.EventImage);"></div>
+                        <div class="text pl-md-5">
+                            <span class="time">@item.Event.ApplicationDate</span>
+                            <h2><a href="/Event/EventDetail/@item.Event.EventID">@item.Event.EventName</a></h2>
+                            <p>@item.Event.Description</p>
+                            <h3 class="speaker-name">&mdash; <a href="#">@item.Person.FirstName @item.Person.LastName</a> <span class="position">@item.Event.Address</span></h3>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <a type="button" class="btn btn-warning" href="">Update</a>
+                    <a type="button" class="btn btn-danger" href="@Url.Action("DeleteJoinedEvent","Event" ,new {id=item.ID })" onclick="return confirm('Sure you Delete')">Delete</a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
