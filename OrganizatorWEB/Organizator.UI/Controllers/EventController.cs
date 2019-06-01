@@ -1,5 +1,6 @@
 ﻿using Organizator.BLL;
 using Organizator.Entity;
+using Organizator.UI.Filter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace Organizator.UI.Controllers
     {
         EventBLL eventBLL = new EventBLL();
         // GET: Event
+        [LoginFilter]
         public ActionResult AddEvent()
         {
             return View(new Event());
@@ -25,29 +27,32 @@ namespace Organizator.UI.Controllers
             eventBLL.AddEvent(events);
             return RedirectToAction("GetEvents", "Event");
         }
+        [LoginFilter]
         public ActionResult GetEvents()
         {
             var model = eventBLL.GetEvents();
             return View(model);
         }
+        [LoginFilter]
         public ActionResult EventDetail(int id)
         {
             var model = eventBLL.EventDetail(id);
             return View(model);
         }
-        
+        [LoginFilter]
         public ActionResult UserGetEvents()
         {
             var person = (Person)Session["Login"];
             var model = eventBLL.UserGetEvents(person.PersonID);
             return View(model);
         }
-
+        [LoginFilter]
         public ActionResult DeleteEvent(int id)
         {
             eventBLL.DeleteEvent(id);
             return RedirectToAction("UserGetEvents", "Event");
         }
+        [LoginFilter]
         public ActionResult JoinEvent()
         {
             return View(new EventPeople());
@@ -60,12 +65,14 @@ namespace Organizator.UI.Controllers
             eventBLL.JoinEvent(events);
             return RedirectToAction("GetEvents", "Event");
         }
+        [LoginFilter]
         public ActionResult GetJoinedEvent()
         {
             var person = (Person)Session["Login"];
             var model = eventBLL.GetJoinedEvent(person.PersonID);
             return View(model);
         }
+        [LoginFilter]
         public ActionResult DeleteJoinedEvent(int id)
         {
             eventBLL.DeleteJoinedEvent(id);
