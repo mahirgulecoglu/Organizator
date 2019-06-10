@@ -43,7 +43,7 @@ namespace Organizator.UI.Controllers
             var model = eventBLL.EventDetail(id);
             if (model != null)
             {
-                Session["ID"] = model;
+                Session["ID"] = model.EventID;
             }
             return View(model);
         }
@@ -69,8 +69,7 @@ namespace Organizator.UI.Controllers
         public ActionResult JoinEvent(EventPeople events)
         {
             var person = (Person)Session["Login"];
-            var e = (Event)Session["ID"];
-            events.EventID = e.EventID;
+            events.EventID = (int)Session["ID"];
             events.PersonID = person.PersonID;
             eventBLL.JoinEvent(events);
             return RedirectToAction("GetEvents", "Event");
