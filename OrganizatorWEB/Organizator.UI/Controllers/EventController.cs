@@ -36,7 +36,15 @@ namespace Organizator.UI.Controllers
         [LoginFilter]
         public ActionResult EventDetail(int id)
         {
+            if (Session["ID"]!=null)
+            {
+                Session.Remove("ID");
+            }
             var model = eventBLL.EventDetail(id);
+            if (model != null)
+            {
+                Session["ID"] = model;
+            }
             return View(model);
         }
         [LoginFilter]
@@ -61,6 +69,8 @@ namespace Organizator.UI.Controllers
         public ActionResult JoinEvent(EventPeople events)
         {
             var person = (Person)Session["Login"];
+            var e = (Event)Session["ID"];
+            events.EventID = e.EventID;
             events.PersonID = person.PersonID;
             eventBLL.JoinEvent(events);
             return RedirectToAction("GetEvents", "Event");
