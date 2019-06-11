@@ -1,11 +1,18 @@
 ﻿@model Organizator.Entity.EventPeople
-@*@{
-    int id = 0;
-    if (Convert.ToInt32(ViewContext.RouteData.Values["id"]) != 0)
+@using Organizator.BLL
+@using Organizator.Entity
+@{
+    int totalperson=0;
+    Event events = new Event();
+    if (Session["ID"] != null)
     {
-        id = Convert.ToInt32(ViewContext.RouteData.Values["id"]);
+        EventBLL eventBLL = new EventBLL();
+        events = eventBLL.EventDetail((int)Session["ID"]);
+        totalperson = eventBLL.TotalPerson((int)Session["ID"]);
     }
-}*@
+    int id = events.Subscribers - totalperson;
+}
+
 <div class="modal" id="myModalJoin">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -19,12 +26,8 @@
                     @Html.AntiForgeryToken()
                     <div class="form-group">
                         @Html.Label("TotalPerson", "Number of Seat")
-                        @Html.TextBoxFor(x => x.TotalPerson, new { @class = "form-control", type = "number", min = "1", max = "5", style = "height:40px; width:75px" })
+                        @Html.TextBoxFor(x => x.TotalPerson, new { @class = "form-control", type = "number", min = "1", max = id, style = "height:40px; width:75px" })
                     </div>
-                        @*@if (id != 0)
-                        {
-                            @Html.HiddenFor(x => x.EventID == id)
-                        }*@
                     <button type="submit" class="btn btn-primary">SET</button>
                     <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
                 }

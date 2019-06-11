@@ -61,5 +61,19 @@ namespace Organizator.BLL
             db.EventPeople.Remove(events);
             db.SaveChanges();
         }
+
+        public int TotalPerson(int id)
+        {
+            try
+            {
+                return db.EventPeople.Where(x => x.EventID == id).Select(a => a.TotalPerson).Sum();
+            }
+            catch
+            {
+                return 0;
+            }
+
+        }
+
     }
 }

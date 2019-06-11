@@ -1,7 +1,11 @@
 ﻿@model Organizator.Entity.Event
+@using Organizator.BLL
 @{
     ViewBag.Title = "EventDetail";
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
+    EventBLL eventBLL = new EventBLL();
+    var totalperson = eventBLL.TotalPerson((int)Session["ID"]);
+    int id = Model.Subscribers - totalperson;
 }
 <br />
 <br />
@@ -41,16 +45,26 @@
                                 <div class="icon d-flex justify-content-center align-items-center">
                                     <span class="flaticon-chair"></span>
                                 </div>
-                                <strong class="number">@Model.Subscribers</strong>
+                                <strong class="number">@totalperson/@Model.Subscribers</strong>
                                 <span>Total Seats</span>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 justify-content-center counter-wrap ftco-animate">
                         <br /><br />
-                        <a class="btn btn-primary btn-lg" href="/Event/JoinEvent/@Model.EventID" data-toggle="modal" data-target="#myModalJoin">JOIN</a>
-
-                    </div>@*@Url.Action("JoinEvent", "Event", new { id = Model.EventID })*@
+                        @if (id != 0)
+                        {
+                            <a class="btn btn-primary btn-lg" href="/Event/JoinEvent/@Model.EventID" data-toggle="modal" data-target="#myModalJoin">JOIN</a>
+                            if (id <= 5)
+                            {
+                                <i style="color:red"> Son @id Kişilik Yer.</i>
+                            }
+                        }
+                        else
+                        {
+                            <a class="btn btn-primary btn-lg" href="" onclick="return confirm('Kotamız Doldu')">Kota Dolu</a>
+                        }
+                    </div>
                 </div>
             </div>
         </div>

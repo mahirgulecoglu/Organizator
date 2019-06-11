@@ -87,5 +87,6 @@ namespace Organizator.UI.Controllers
             eventBLL.DeleteJoinedEvent(id);
             return RedirectToAction("GetJoinedEvent", "Event");
         }
+        
     }
 }
