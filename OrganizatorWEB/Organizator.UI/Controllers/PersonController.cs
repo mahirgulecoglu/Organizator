@@ -40,5 +40,11 @@ namespace Organizator.UI.Controllers
             personBLL.UpdatePerson(person);
             return RedirectToAction("PersonDetail","Person");
         }
+        [LoginFilter]
+        public ActionResult GetPeoples(int id)
+        {
+            var model = personBLL.GetPeoples(id);
+            return View(model);
+        }
     }
 }

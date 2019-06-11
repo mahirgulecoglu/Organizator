@@ -26,7 +26,7 @@
                     </div>
                 </td>
                 <td>
-                    <a type="button" class="btn btn-warning" href="">Update</a>
+                    <a type="button" class="btn btn-warning" href="@Url.Action("GetPeoples","Person" ,new {id=item.EventID })">Participants</a>
                     <a type="button" class="btn btn-danger" href="@Url.Action("DeleteEvent","Event" ,new {id=item.EventID })" onclick="return confirm('Sure you Delete')">Delete</a>
                 </td>
             </tr>

@@ -29,5 +29,9 @@ namespace Organizator.BLL
         {
             db.SaveChanges();
         }
+        public List<EventPeople> GetPeoples(int id)
+        {
+            return db.EventPeople.Where(x => x.EventID == id).ToList();
+        }
     }
 }
