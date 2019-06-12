@@ -4,6 +4,7 @@
     ViewBag.Title = "PersonDetail";
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
+
 <br /><br /><br /><br />
 
 <section class="ftco-section contact-section">
@@ -15,11 +16,11 @@
             <div class="w-100"></div>
             @foreach (var item in Model)
             {
-                <div class="col-md-12">
-                    <p><span>@item.Person.FirstName @item.Person.LastName </span>için Ayrılan Koltuk Sayısı : @item.TotalPerson</p>
+                <div class="checkbox">
+                    <label><input type="checkbox" id="Checked" /><span>      @item.Person.FirstName @item.Person.LastName </span>için Ayrılan Koltuk Sayısı : @item.TotalPerson</label>
                 </div>
-
             }
         </div>
+        <a type="button" class="btn btn-success" href=""> SEND Message </a>
     </div>
 </section>
